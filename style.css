@@ -236,6 +236,20 @@ body {
   flex-shrink: 0;
 }
 
+.card-fiturs {
+  background: #ffffff; /* warna putih */
+  padding: 20px;
+  margin: 20px 15px; /* jarak kiri kanan 15px */
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* bayangan biar nimbul */
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* jarak antar button */
+}
+
+.card-fiturs button {
+  width: 100%; /* biar full 1 baris */
+}
 /* ==========================================
    TENTANG & FOOTER
    ========================================== */
@@ -257,7 +271,7 @@ body {
 }
 
 footer {
-  background: #0d47a1; 
+  background: #eee; 
   color: white; 
   text-align: center;
   padding: 25px 20px; 
