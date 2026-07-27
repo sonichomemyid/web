@@ -145,7 +145,7 @@ body {
 .btn-subscribe {
   display: inline-block;
   padding: 12px 16px;
-  background-color: #0088ff; /* Warna latar tombol */
+  background-color: #333; /* Warna latar tombol */
   color: #000000;            /* Warna teks */
   font-weight: bold;
   font-size: 14px;
