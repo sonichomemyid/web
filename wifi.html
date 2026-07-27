@@ -5,99 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paket WiFi - SONICHOME</title>
 <style>
-  body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
-  
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+  body { background: #f3f4f6; }
+
   /* HEADER */
   .header {
-    background: #0099ff;
-    padding: 10px 15px;
+    background: white;
+    padding: 12px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
   }
   .header img.logo { height: 45px; }
-  .burger { font-size: 28px; color: white; cursor: pointer; }
+  .burger { font-size: 30px; color: #6b21a8; cursor: pointer; }
 
-  /* SIDEBAR MENU */
+  /* SIDEBAR */
   .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: white;
-    overflow-x: hidden;
-    transition: 0.3s;
-    z-index: 2000;
+    height: 100%; width: 0; position: fixed; top: 0; left: 0;
+    background: white; overflow-x: hidden; transition: 0.3s; z-index: 2000;
     box-shadow: 2px 0 10px rgba(0,0,0,0.2);
   }
-  .sidebar .closebtn {
-    font-size: 35px;
-    position: absolute;
-    top: 5px;
-    right: 20px;
-    cursor: pointer;
-    color: #333;
-  }
+  .sidebar .closebtn { font-size: 35px; position: absolute; top: 5px; right: 20px; cursor: pointer; }
   .sidebar a {
-    padding: 15px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #333;
-    display: block;
-    border-bottom: 1px solid #eee;
-    text-align: center;
+    padding: 15px 20px; text-decoration: none; font-size: 16px;
+    color: #333; display: block; border-bottom: 1px solid #eee; text-align: center;
   }
-  .sidebar a.active { color: #0099ff; font-weight: bold; }
-  .submenu a { padding-left: 40px; color: #0099ff; font-size: 15px; }
+  .sidebar a.active { color: #6b21a8; font-weight: bold; }
+  .submenu a { padding-left: 40px; color: #6b21a8; font-size: 15px; }
 
-  /* KONTEN */
+  /* KONTEN PAKET */
   .container { padding: 20px; }
-  .title { text-align: center; font-size: 24px; font-weight: bold; margin: 20px 0; color: #0099ff; }
   .card {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: white; border-radius: 15px; padding: 25px;
+    margin-bottom: 20px; text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
-  .card h3 { margin: 0; color: #0099ff; }
-  .price { font-size: 22px; font-weight: bold; color: #000; margin: 10px 0; }
-  .btn {
-    background: #0099ff;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
+  .card h3 { color: #1e3a8a; font-size: 20px; margin-bottom: 8px; }
+  .price { color: #f97316; font-size: 42px; font-weight: 900; }
+  .price span { font-size: 16px; color: #f97316; }
+  .detail { margin: 12px 0 20px; color: #333; line-height: 1.6; }
+  .btn-daftar {
+    background: #f97316; color: white; border: none;
+    padding: 14px; width: 100%; border-radius: 12px;
+    font-weight: bold; font-size: 16px; cursor: pointer;
   }
-  .whatsapp {
-  position: fixed; 
-  bottom: 25px; 
-  right: 25px;
-  background: #25D366; 
-  color: white;
-  width: 55px; 
-  height: 55px;
-  border-radius: 50%; 
-  text-decoration: none;
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  font-size: 30px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
-  z-index: 999;
-}
 
-.whatsapp:hover { 
-  transform: scale(1.1); 
-        }
+  /* METODE PEMBAYARAN */
+  .payment {
+    background: white; border-radius: 15px; padding: 20px;
+    margin-top: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .payment h4 { text-align: center; color: #1e3a8a; margin-bottom: 15px; font-size: 18px; }
+  .payment-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .payment-item {
+    border: 1px solid #ddd; border-radius: 8px; padding: 10px 15px;
+    font-size: 14px; font-weight: bold; color: #333;
+  }
+
+  /* WA FLOAT */
+  .wa-float {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #25D366; width: 55px; height: 55px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 999;
+  }
 </style>
 </head>
 <body>
@@ -108,7 +83,7 @@
     <span class="burger" onclick="openNav()">☰</span>
   </div>
 
-  <!-- SIDEBAR MENU BURGER -->
+  <!-- SIDEBAR MENU -->
   <div id="mySidebar" class="sidebar">
     <a class="closebtn" onclick="closeNav()">×</a>
     <a href="index.html">Dashboard</a>
@@ -121,52 +96,70 @@
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
     <a href="syarat.html">Syarat & Ketentuan</a>
-    
-    <button class="btn" style="margin:15px; width:calc(100% - 30px);">🎧 Service 24 jam</button>
-    <button class="btn" style="margin:0 15px; width:calc(100% - 30px);">Berlangganan Sekarang</button>
   </div>
 
-  <!-- ISI HALAMAN WIFI -->
+  <!-- ISI -->
   <div class="container">
-    <div class="title">Paket Internet WiFi</div>
-
+    
+    <!-- PAKET HEMAT -->
     <div class="card">
-      <h3>Paket Hemat</h3>
-      <p>20 Mbps | Unlimited</p>
-      <div class="price">Rp 150.000 / bulan</div>
-      <button class="btn" onclick="wa('Paket Hemat')">Berlangganan Sekarang</button>
+      <h3>Paket HEMAT</h3>
+      <div class="price">150rb<span>/bulan</span></div>
+      <div class="detail">
+        Kecepatan: 20 Mbps <br>
+        Unlimited
+      </div>
+      <button class="btn-daftar" onclick="daftar('Paket HEMAT 150rb')">Daftar Sekarang</button>
     </div>
 
+    <!-- PAKET CEPAT -->
     <div class="card">
-      <h3>Paket Keluarga</h3>
-      <p>35 Mbps | Unlimited | Free Router</p>
-      <div class="price">Rp 185.000 / bulan</div>
-      <button class="btn" onclick="wa('Paket Keluarga')">Berlangganan Sekarang</button>
+      <h3>Paket CEPAT</h3>
+      <div class="price">185rb<span>/bulan</span></div>
+      <div class="detail">
+        Kecepatan: 35 Mbps <br>
+        Unlimited + Free Router
+      </div>
+      <button class="btn-daftar" onclick="daftar('Paket CEPAT 185rb')">Daftar Sekarang</button>
     </div>
 
+    <!-- PAKET PRO -->
     <div class="card">
-      <h3>Paket Gamer</h3>
-      <p>50 Mbps | Low Ping | Prioritas</p>
-      <div class="price">Rp 200.000 / bulan</div>
-      <button class="btn" onclick="wa('Paket Gamer')">Berlangganan Sekarang</button>
+      <h3>Paket PRO</h3>
+      <div class="price">200rb<span>/bulan</span></div>
+      <div class="detail">
+        Kecepatan: 50 Mbps <br>
+        Kuota Unlimited + Free Cctv & Router
+      </div>
+      <button class="btn-daftar" onclick="daftar('Paket PRO 200rb')">Daftar Sekarang</button>
     </div>
+
+    <!-- METODE PEMBAYARAN -->
+    <div class="payment">
+      <h4>Metode Pembayaran</h4>
+      <div class="payment-list">
+        <div class="payment-item">🏦 BCA</div>
+        <div class="payment-item">🏦 BRI</div>
+        <div class="payment-item">🏦 Mandiri</div>
+        <div class="payment-item">💳 E-Wallet</div>
+        <div class="payment-item">🏪 Alfamart</div>
+        <div class="payment-item">🏠 Bayar di Rumah</div>
+      </div>
+    </div>
+
   </div>
 
   <!-- TOMBOL WA -->
-  <a href="https://wa.me/628175284838" class="whatsapp" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
+  <a href="https://wa.me/62xxxxxxxxxx" class="wa-float">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
   </a>
 
 <script>
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "280px";
-  }
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-  }
-  function wa(paket) {
-    let pesan = `Halo SONICHOME, saya mau berlangganan ${paket}`;
-    window.open(`https://wa.me/628175284838?text=${encodeURIComponent(pesan)}`);
+  function openNav() { document.getElementById("mySidebar").style.width = "280px"; }
+  function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
+  function daftar(paket) {
+    let pesan = `Halo SONICHOME, saya mau daftar ${paket}. Info metode pembayaran dong`;
+    window.open(`https://wa.me/62xxxxxxxxxx?text=${encodeURIComponent(pesan)}`);
   }
 </script>
 
