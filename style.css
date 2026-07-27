@@ -720,12 +720,15 @@ body {
 .cctv-harga {
   font-size: 22px;
   font-weight: bold;
-  color: #0f766e;
+  color: #00A3FF;
   margin: 15px 0;
 }
 .cctv-btn {
-  background: #0f766e;
-  color: white;
+  background: #ffffff;
+   color: #000;
+   border: 2px solid #000;
+  /*background: #0f766e;
+  color: white;*/
   padding: 12px 24px;
   border-radius: 8px;
   text-decoration: none;
