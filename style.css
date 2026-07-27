@@ -24,7 +24,7 @@ body {
   display: flex; 
   justify-content: space-between; 
   align-items: center;
-  background: #0d47a1; /* Ubah ke #0a4cff jika mau warna lebih cerah */
+  background: #00A3FF; /* Ubah ke #0a4cff jika mau warna lebih cerah */
   color: white; 
   padding: 12px 20px;
   position: sticky; 
