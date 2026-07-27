@@ -282,14 +282,18 @@ body {
   margin-left: 20px; 
 }
 
-footer {
-  background: white; 
-  color: white; 
-  text-align: center;
-  padding: 0 auto;/*25px 20px; */
-  margin-top: 40px;
+.footer {
+   background: #111;
+   color: #ffffff;
+   padding: 40px 20px;
+   margin-top: 50px;
+   text-align: center;
 }
-
+.footer a {
+   color: #ddd;
+   text-decoration: none;
+   margin: 0 10px;
+}
 /* ==========================================
    FLOATING BUTTON (WHATSAPP)
    ========================================== */
