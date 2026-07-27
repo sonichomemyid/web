@@ -196,7 +196,7 @@ body {
 }
 
 .cards {
-  background: #333;
+  background: #333 !important;
   padding: 10px 80px;
   border-radius: 0px;
   justify-content=: center;
@@ -208,7 +208,7 @@ body {
 .card {
   opacity: 1 !important;
   transform: none !important;
-  background: #333;
+  background: #333 !important;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
@@ -227,7 +227,7 @@ body {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  background: #333; 
+  background: #333 !important; 
 }
 
 .card i {
