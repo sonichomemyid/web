@@ -1,72 +1,136 @@
-<!DOCTYPE html>
+<!DOCTYPE <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WiFi - SONICHOME</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: sans-serif; background: #f8fafc; margin: 0; padding-bottom: 70px; color: #1e293b; }
-        .wf-head { background: #0088cc; color: #fff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
-        .wf-logo { font-weight: 800; font-style: italic; font-size: 18px; }
-        .wf-logo span { font-size: 9px; font-style: normal; display: block; color: #e0f2fe; }
-        .wf-menu { display: none; background: #fff; border-bottom: 1px solid #ddd; text-align: center; }
-        .wf-menu.active { display: block; }
-        .wf-menu a { display: block; padding: 10px; color: #333; text-decoration: none; border-bottom: 1px solid #eee; }
-        .wf-card { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 16px; margin: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .wf-card.pop { border: 2px solid #0088cc; }
-        .wf-price { font-size: 22px; font-weight: 800; color: #0088cc; margin: 8px 0; }
-        .wf-btn { display: block; text-align: center; background: #0088cc; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: bold; }
-        .wf-footer { background: #0f172a; color: #fff; text-align: center; padding: 16px; font-size: 11px; }
-        .wf-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #ddd; display: flex; justify-content: space-around; padding: 8px 0; }
-        .wf-nav a { color: #64748b; text-decoration: none; font-size: 11px; text-align: center; }
-        .wf-wa { position: fixed; bottom: 60px; right: 16px; background: #22c55e; color: #fff; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paket WiFi - SONICHOME</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+  }
+  /* HEADER SAMA KAYAK DASHBOARD */
+  .header {
+    background: #0099ff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+  }
+  .header img.logo { height: 50px; }
+  .header .close { font-size: 30px; cursor: pointer; }
+  
+  /* MENU */
+  .menu { background: white; text-align: center; }
+  .menu a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+  }
+  .menu a.active { color: #0099ff; font-weight: bold; }
+  .submenu a { padding-left: 40px; color: #0099ff; }
+
+  /* KONTEN PAKET WIFI */
+  .container { padding: 20px; }
+  .title { text-align: center; font-size: 24px; font-weight: bold; margin: 20px 0; color: #0099ff; }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .card h3 { margin: 0; color: #0099ff; }
+  .price { font-size: 22px; font-weight: bold; color: #000; margin: 10px 0; }
+  .btn {
+    background: #0099ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .wa-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
 </head>
 <body>
 
-    <!-- Header & Burger -->
-    <div class="wf-head">
-        <div class="wf-logo">⚡ SONICHOME <span>Powered By TRIKAMEDIA</span></div>
-        <i class="fa-solid fa-bars" onclick="document.getElementById('m').classList.toggle('active')" style="cursor:pointer;font-size:20px;"></i>
-    </div>
-    <div id="m" class="wf-menu">
-        <a href="#">Dashboard</a>
-        <a href="#" style="color:#0088cc;font-weight:bold;"><i class="fa-solid fa-wifi"></i> WiFi</a>
-        <a href="#"><i class="fa-solid fa-bolt"></i> Cctv</a>
-        <a href="#">Promo</a>
-    </div>
+  <!-- HEADER -->
+  <div class="header">
+    <img src="logo.png" class="logo" alt="SONICHOME">
+    <span class="close" onclick="history.back()">×</span>
+  </div>
 
-    <!-- Produk WiFi -->
-    <div class="wf-card">
-        <span style="background:#e0f2fe;color:#0088cc;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:bold;">HOME 1</span>
-        <h3 style="margin:5px 0;">10 Mbps</h3>
-        <div class="wf-price">Rp 150.000 <span style="font-size:12px;color:#888;">/bln</span></div>
-        <p style="font-size:12px;color:#666;">Cocok untuk 2-4 HP/Laptop, tanpa FUP.</p>
-        <a href="https://wa.me/6281234567890?text=Order%2010Mbps" class="wf-btn">Berlangganan Sekarang</a>
+  <!-- MENU -->
+  <div class="menu">
+    <a href="index.html">Dashboard</a>
+    <a>Produk ^</a>
+    <div class="submenu">
+      <a href="wifi.html" class="active">📶 WiFi</a>
+      <a href="cctv.html">⚡ Cctv</a>
+      <a href="promo.html">🏷️ Promo</a>
     </div>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="syarat.html">Syarat & Ketentuan</a>
+  </div>
 
-    <div class="wf-card pop">
-        <span style="background:#0088cc;color:#fff;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:bold;">POPULER</span>
-        <h3 style="margin:5px 0;">20 Mbps</h3>
-        <div class="wf-price">Rp 200.000 <span style="font-size:12px;color:#888;">/bln</span></div>
-        <p style="font-size:12px;color:#666;">Streaming & game online lancar 4-7 perangkat.</p>
-        <a href="https://wa.me/6281234567890?text=Order%2020Mbps" class="wf-btn">Berlangganan Sekarang</a>
-    </div>
+  <!-- ISI HALAMAN WIFI -->
+  <div class="container">
+    <div class="title">Paket Internet WiFi</div>
 
-    <!-- Footer -->
-    <div class="wf-footer">&copy; 2026 SONICHOME</div>
-
-    <!-- Bottom Nav -->
-    <div class="wf-nav">
-        <a href="#"><i class="fa-solid fa-house" style="display:block;"></i>Home</a>
-        <a href="#" style="color:#0088cc;font-weight:bold;"><i class="fa-solid fa-wifi" style="display:block;"></i>WiFi</a>
-        <a href="#"><i class="fa-solid fa-tags" style="display:block;"></i>Promo</a>
+    <div class="card">
+      <h3>Paket Hemat</h3>
+      <p>Up to 20 Mbps | Unlimited</p>
+      <div class="price">Rp 250.000 / bulan</div>
+      <button class="btn" onclick="wa('Paket Hemat')">Berlangganan Sekarang</button>
     </div>
 
-    <!-- WA Button -->
-    <a href="https://wa.me/6281234567890" class="wf-wa"><i class="fa-brands fa-whatsapp"></i></a>
+    <div class="card">
+      <h3>Paket Keluarga</h3>
+      <p>Up to 50 Mbps | Unlimited | Free Router</p>
+      <div class="price">Rp 350.000 / bulan</div>
+      <button class="btn" onclick="wa('Paket Keluarga')">Berlangganan Sekarang</button>
+    </div>
+
+    <div class="card">
+      <h3>Paket Gamer</h3>
+      <p>Up to 100 Mbps | Low Ping | Prioritas</p>
+      <div class="price">Rp 500.000 / bulan</div>
+      <button class="btn" onclick="wa('Paket Gamer')">Berlangganan Sekarang</button>
+    </div>
+
+    <button class="btn" style="background:#333;">🎧 Service 24 jam</button>
+  </div>
+
+  <!-- TOMBOL WA -->
+  <a href="https://wa.me/62xxxxxxxxxx" class="wa-float">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+  </a>
+
+<script>
+  function wa(paket) {
+    let pesan = `Halo SONICHOME, saya mau berlangganan ${paket}`;
+    window.open(`https://wa.me/62xxxxxxxxxx?text=${encodeURIComponent(pesan)}`);
+  }
+</script>
 
 </body>
-</html>
-
+          </html>
