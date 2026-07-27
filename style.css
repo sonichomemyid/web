@@ -838,8 +838,10 @@ body {
 .wifi-fitur li:before {
    margin: 12px 0 20px; 
    color: #333;
-   line-height: 1.6; 
+   line-height: 1.6;
+   wifi-weight: bold;
 }
+.detail { margin: 12px 0 20px; color: #333; line-height: 1.6; }
 .wifi-harga {
   font-size: 24px;
   font-weight: bold;
