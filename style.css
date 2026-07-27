@@ -878,3 +878,13 @@ body {
 .wifi-footer a:hover {
   color: #ffffff;
    }
+
+.wifi-about-logo {
+text-align: center;
+margin: 30px;
+}
+.wifi-about-logo img {
+   max-width: 200px;
+   height: auto;
+   width: 100%;
+}
