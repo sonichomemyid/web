@@ -752,3 +752,127 @@ body {
 .cctv-footer a:hover {
   color: #ffffff;
    }
+
+/* ========= STYLE KHUSUS HALAMAN WIFI ========= */
+
+.wifi-header {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+.wifi-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.wifi-header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.wifi-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+.wifi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.wifi-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  border-top: 5px solid #0f766e;
+  transition: 0.3s;
+}
+.wifi-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+.wifi-card.populer {
+  border-top: 5px solid #f59e0b;
+  position: relative;
+}
+.wifi-badge {
+  background: #f59e0b;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 20px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wifi-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+.wifi-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+.wifi-kecepatan {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0f766e;
+  margin: 15px 0;
+}
+.wifi-fitur {
+  list-style: none;
+  text-align: left;
+  margin: 20px 0;
+}
+.wifi-fitur li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #475569;
+  border-bottom: 1px dashed #e2e8f0;
+}
+.wifi-fitur li:before {
+  content: "✓ ";
+  color: #0f766e;
+  font-weight: bold;
+}
+.wifi-harga {
+  font-size: 24px;
+  font-weight: bold;
+  color: #dc2626;
+  margin: 20px 0;
+}
+.wifi-btn {
+  background: #0f766e;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  width: 100%;
+}
+.wifi-btn:hover {
+  background: #115e59;
+}
+
+.wifi-footer {
+  background: #334155;
+  color: #f8fafc;
+  padding: 40px 20px 80px 20px;
+  margin: 60px 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+.wifi-footer a {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin: 0 12px;
+}
+.wifi-footer a:hover {
+  color: #ffffff;
+   }
