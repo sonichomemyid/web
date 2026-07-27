@@ -14,36 +14,53 @@
   body { background: #f3f4f6; }
 
   /* HEADER */
-  .navbar {
-  position: relative;
+  
+/* RESET */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: Arial, sans-serif; 
+}
+
+body { 
+  background: #fff; /* #white salah, harus #fff */
+}
+
+/* NAVBAR SIMPLE */
+.navbar {
   display: flex; 
   justify-content: space-between; 
   align-items: center;
-  background: #0d47a1; /* Ubah ke #0a4cff jika mau warna lebih cerah */
+  background: #0d47a1; 
   color: white; 
-  padding: 12px 20px;
+  padding: 10px 15px;
+  position: sticky; 
   top: 0; 
-  z-index: 100; 
+  z-index: 1000; 
+  width: 100%;
 }
 
+/* LOGO KIRI */
 .logo img {
-  height: 80px;
+  height: 45px; /* 70px kegedean di HP, turunin */
   width: auto;
   display: block;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
 }
 
+/* BURGER KANAN */
 .burger {
   cursor: pointer;
-  z-index: 1001;
   width: 28px;
   height: 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .burger span {
-  position: absolute;
-  left: 0;
+  display: block;
   width: 100%;
   height: 3px;
   background: white;
@@ -51,12 +68,12 @@
   border-radius: 2px;
 }
 
-/* Posisi 3 Garis Burger */
+/* Posisi 3 Garis */
 .burger span:nth-child(1) { top: 0; }
 .burger span:nth-child(2) { top: 8.5px; }
-.burger span:nth-child(3) { bottom: 0; }
+.burger span:nth-child(3) { top: 17px; }
 
-/* Animasi Transformasi ke 'X' */
+/* Animasi jadi X */
 .burger.active span:nth-child(1) {
   top: 8.5px;
   transform: rotate(45deg);
@@ -65,34 +82,27 @@
   opacity: 0;
 }
 .burger.active span:nth-child(3) {
-  bottom: auto;
   top: 8.5px;
   transform: rotate(-45deg);
 }
-/* Biar Logo Mentok Kiri & Burger Mentok Kanan */
-.navbar-container {
-  display: flex;
-  justify-content: space-between; /* Mendorong logo ke paling kiri & burger ke paling kanan */
-  align-items: center;
-  width: 100%;
-}
-/* Dropdown Menu Utama Mobile */
+
+/* MENU DROPDOWN */
 .menu {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%; /* Pakai 100% biar gak melebihi layar di HP */
+  width: 100%;
   background: white;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  z-index: 1000;
+  z-index: 999;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-in-out;
 }
 
 .menu.active {
-  max-height: 1000px !important;
+  max-height: 500px;
 }
 
 .menu a {
@@ -102,38 +112,6 @@
   color: #333;
   text-decoration: none;
   font-size: 16px;
-}
-
-/* Sub-Dropdown Menu */
-.dropdown-content {
-  display: none !important;
-  background: white;
-}
-
-.dropdown-content a {
-  display: flex !important;
-  align-items: center;
-  justify-content: center; /* Fixed typo: 'cente' -> 'center' */
-  gap: 10px;
-  padding: 12px 16px;
-  font-size: 15px;
-  color: #333;
-  border-top: 1px solid #ddd;
-  text-decoration: none;
-}
-
-.dropdown-content i {
-  color: #007bff;
-  width: 18px;
-  text-align: center;
-}
-
-.menu-item.active .dropdown-content {
-  display: block !important;
-}
-
-.menu-item.active .arrow {
-  transform: rotate(180deg);
 }
 
   /* KONTEN PAKET */
