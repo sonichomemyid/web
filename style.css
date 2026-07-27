@@ -178,8 +178,22 @@ body {
 /*.banner-container {
   background: none !important;
   padding: 0 !important;
-}
+}*/
+.banner2 {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 25px 0; /* 0 = gak ada jarak kiri kanan, full */
+  border-radius: 0; /* sudut lancip kayak banner pertama */
+   }
 
+.banner3 {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 25px 0; /* 0 = gak ada jarak kiri kanan, full */
+  border-radius: 0; /* sudut lancip kayak banner pertama */
+}
 /* ==========================================
    DASHBOARD & CARDS
    ========================================== */
