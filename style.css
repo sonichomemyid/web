@@ -786,7 +786,7 @@ body {
   padding: 30px 25px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   text-align: center;
-  border-top: 5px solid #0f766e;
+  border-top: 5px solid #00A3FF;
   transition: 0.3s;
 }
 .wifi-card:hover {
