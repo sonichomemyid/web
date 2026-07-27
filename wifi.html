@@ -124,7 +124,23 @@ body {
   .price span { font-size: 16px; color: #f97316; }
   .detail { margin: 12px 0 20px; color: #333; line-height: 1.6; }
   .btn-daftar { background: #00A3FF; color: white; border: none; padding: 14px; width: 100%; border-radius: 12px; font-weight: bold; font-size: 14px; cursor: pointer; text-decoration: none; }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 
+/* PAKSA SEMUA CARD JADI PUTIH TERUS */
+.card,
+.card.popular,
+.card:active,
+.card.popular:active,
+.card:hover,
+.card.popular:hover,
+.card:focus {
+  background: #ffffff !important;
+  color: #000000 !important; /* biar tulisan hitam kebaca */
+}
+
+  
   /* METODE PEMBAYARAN STATIC */
   .payment { background: white; border-radius: 15px; padding: 20px; margin-top: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
   .payment h4 { text-align: center; color: #1e3a8a; margin-bottom: 15px; font-size: 18px; }
@@ -139,6 +155,7 @@ body {
   .payment-option:hover { background: #f3f4f6; border-color: #f97316; }
   .close-popup { text-align: right; font-size: 24px; cursor: pointer; }
 
+  
   /* WA FLOAT - ICON BENERAN */
   whatsapp {
   position: fixed; 
