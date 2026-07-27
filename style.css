@@ -179,21 +179,7 @@ body {
   background: none !important;
   padding: 0 !important;
 }*/
-.banner2 {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 25px 0; /* 0 = gak ada jarak kiri kanan, full */
-  border-radius: 0; /* sudut lancip kayak banner pertama */
-   }
 
-.banner3 {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 25px 0; /* 0 = gak ada jarak kiri kanan, full */
-  border-radius: 0; /* sudut lancip kayak banner pertama */
-}
 /* ==========================================
    DASHBOARD & CARDS
    ========================================== */
@@ -222,7 +208,7 @@ body {
 .card {
   opacity: 1 !important;
   transform: none !important;
-  background: #0088ff;
+  background: #333;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
@@ -241,7 +227,7 @@ body {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  background: #0066cc; 
+  background: #333; 
 }
 
 .card i {
