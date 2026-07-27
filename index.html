@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonic Home - dasboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+   <a href="index.html">
+    <img src="logo.png" alt="Logo Sonic">
+   </a>  
+</div>
+  
+  <!-- Tombol Burger -->
+  <div class="burger" id="burgerBtn">
+    <span></span><span></span><span></span>
+  </div>
+
+  <!-- Menu Navigasi -->
+  <div class="menu" id="menuNav">
+    <a href="index.html">Dashboard</a>
+
+    <!-- Sub-menu Produk -->
+    <div class="menu-item" id="produkItem">
+      <a href="javascript:void(0)" id="produkBtn" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+        Produk <i class="fa-solid fa-chevron-down arrow"></i>
+      </a>
+      <div class="dropdown-content">
+        <a href="wifi.html"><i class="fa-solid fa-wifi"></i>WiFi</a>
+        <a href="cctv.html"><i class="fa-solid fa-bolt"></i>Cctv</a>
+        <a href="promo.html"><i class="fa-solid fa-tag"></i> Promo</a>
+      </div>
+    </div>
+
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="terms.html">Syarat & Ketentuan</a>
+  </div>
+</header>
+
+<!-- SCRIPT LANGSUNG DITARUH DISINI BIAR PASTI JALAN -->
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const menu = document.getElementById('menuNav');
+  
+  burger.onclick = function() {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+  };
+
+  // Script Dropdown Produk
+  const produkBtn = document.getElementById('produkBtn');
+  const produkItem = document.getElementById('produkItem');
+  
+  produkBtn.onclick = function(e) {
+    e.preventDefault();
+    produkItem.classList.toggle('active');
+  };
+</script>
+     
+   <section id="dashboard" class="dashboard">
+   <h1>#KamiAdaUntukAnda</h1>
+   <h4>Nikmati internetan tanpa batas dengan harga yang pas</h4>
+   </section>
+<section id="banner" class="banner">
+	 <img src="banner.jpg" class="banner">
+</section>
+
+  <!-- DASHBOARD -->
+  
+  <section id="cards" class="cards">
+      <!--  <div class="cards">  -->
+
+      <div class="card">
+          <i class="fa-solid fa-bolt"></i>
+             <span>Speed up to 100 Mbps</span>
+                   </div>
+      <div class="card">
+          <i class="fa-solid fa-infinity"></i>
+             <span>Unlimited Internet</span>
+                   </div> 
+       <div class="card">
+          <i class="fa-solid fa-headset"></i>
+             <span>Service 24 jam</span>
+                   </div>
+       <div class="action-button-container">
+          <a href="wifi.html" class="btn-subscribe">Berlangganan Sekarang</a>
+                   </div>
+  </section>
+  <section id="dashboard" class="dashboard">    
+          <h1>Berkarya Bersama Sonic Home</h1>
+</br></br>
+          <h2>Kerja, sosial media, dan aktivitas lainya menjadi lebih mudah dengan Sonic Home.</h1>
+<br></br>
+          <h2><b>Sonic Home</b> hadir dengan bandWith 400 Mbps serta kuota unlimited. sehingga membantu kegiatan sehari-hari.</h2>
+   </section>
+  <!-- DESKRIPSI PANJANG BIAR BISA SCROLL -->
+  <section id="tentang" class="tentang hidden-left">
+    <h2>Tentang Kami</h2>
+    <p>Sonic Home adalah penyedia layanan internet rumahan untuk keseharian seperti pekerjaan, tugas, game, sosmed, dll.</p>
+    
+    <h3>Kenapa Pilih Sonic Home?</h3>
+    <ul>
+      <li><b>Kecepatan Tinggi:</b> Streaming, game, zoom lancar anti lag</li>
+      <li><b>Kuota Unlimited:</b> Nikmati internetan tanpa khawatir kuota bakalan habis</li>
+      <li><b>Harga Terjangkau:</b> Paket mulai dari 150rb/bulan</li>
+      <li><b>Instalasi Cepat:</b> Tim kami siap pasang kapanpun</li>
+      <li><b>Support 24/7:</b> Ada kendala? Tim CS kami selalu siap 1×24 Jam </li>
+    </ul>
+
+    <br><br>
+    <br><br>
+    </p>
+  </section>
+
+  <!-- ICON WHATSAPP FLOAT -->
+  <a href="https://wa.me/628175284838" class="whatsapp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER -->
+
+<footer class="footer">
+  <p>© 2026 Sonic Home. All rights reserved.<br>
+     Klungkung, Bali | Email: sonichome2026@gmail.com</p>
+  
+  <!-- LINK PINDAH HALAMAN -->
+  <div class="footer-links" style="margin-top: 10px;">
+    <a href="terms.html" style="color: #ffffff; text-decoration: underline; font-size: 0.9rem;">Syarat & Ketentuan</a>
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
+

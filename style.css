@@ -1,0 +1,637 @@
+
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: Arial, sans-serif; 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  background: #white; 
+  color: #333; 
+  overflow-x: hidden; /* Mencegah scroll samping di HP */
+}
+
+/* ==========================================
+   NAVBAR & BURGER MENU
+   ========================================== */
+.navbar {
+  position: relative;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  background: #0d47a1; /* Ubah ke #0a4cff jika mau warna lebih cerah */
+  color: white; 
+  padding: 12px 20px;
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
+}
+
+.burger {
+  cursor: pointer;
+  z-index: 1001;
+  width: 28px;
+  height: 20px;
+  position: relative;
+}
+
+.burger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: white;
+  transition: 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+/* Posisi 3 Garis Burger */
+.burger span:nth-child(1) { top: 0; }
+.burger span:nth-child(2) { top: 8.5px; }
+.burger span:nth-child(3) { bottom: 0; }
+
+/* Animasi Transformasi ke 'X' */
+.burger.active span:nth-child(1) {
+  top: 8.5px;
+  transform: rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  bottom: auto;
+  top: 8.5px;
+  transform: rotate(-45deg);
+}
+
+/* Dropdown Menu Utama Mobile */
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%; /* Pakai 100% biar gak melebihi layar di HP */
+  background: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.menu.active {
+  max-height: 1000px !important;
+}
+
+.menu a {
+  display: block;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Sub-Dropdown Menu */
+.dropdown-content {
+  display: none !important;
+  background: white;
+}
+
+.dropdown-content a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center; /* Fixed typo: 'cente' -> 'center' */
+  gap: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  text-decoration: none;
+}
+
+.dropdown-content i {
+  color: #007bff;
+  width: 18px;
+  text-align: center;
+}
+
+.menu-item.active .dropdown-content {
+  display: block !important;
+}
+
+.menu-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+.action-button-container {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px; /*20px*/
+}
+
+.btn-subscribe {
+  display: inline-block;
+  padding: 12px 16px;
+  background-color: #0088ff; /* Warna latar tombol */
+  color: #333;            /* Warna teks */
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 136, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Efek saat tombol di-hover / disentuh */
+.btn-subscribe:hover {
+  background-color: #0066cc;
+  transform: translateY(-2px);
+}
+
+
+
+/* ==========================================
+   HERO / BANNER
+   ========================================== */
+.banner {
+  width: 100%;
+  max-height: 200px;
+  object-fit:.cover;
+  border-radius: 0px;
+  margin-top: 0 !important;
+  background: transparent !important;
+  margin-bottom: 0px;
+}
+/*.banner-container {
+  background: none !important;
+  padding: 0 !important;
+}
+
+/* ==========================================
+   DASHBOARD & CARDS
+   ========================================== */
+.dashboard { 
+  padding: 5px 50px; 
+  text-align: center; 
+  background: white; 
+  font-size: 14px;
+}
+
+.dashboard h1 { 
+  color: #0d47a1; 
+  margin-bottom: 0px; 
+}
+
+.cards {
+  background: white;
+  padding: 10px 80px;
+  border-radius: 0px;
+  justify-content=: center;
+  align-items:center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.card {
+  opacity: 1 !important;
+  transform: none !important;
+  background: #0088ff;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 15px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  background: #0066cc; 
+}
+
+.card i {
+  font-size: 15px;
+  color: black;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   TENTANG & FOOTER
+   ========================================== */
+.tentang { 
+  padding: 60px 20px; 
+  background: #fff; 
+  max-width: 900px; 
+  margin: auto; 
+  line-height: 1.8; 
+}
+
+.tentang h2, .tentang h3 { 
+  color: #0d47a1; 
+  margin: 20px 0 10px; 
+}
+
+.tentang ul { 
+  margin-left: 20px; 
+}
+
+footer {
+  background: #0d47a1; 
+  color: white; 
+  text-align: center;
+  padding: 25px 20px; 
+  margin-top: 40px;
+}
+
+/* ==========================================
+   FLOATING BUTTON (WHATSAPP)
+   ========================================== */
+.whatsapp {
+  position: fixed; 
+  bottom: 25px; 
+  right: 25px;
+  background: #25D366; 
+  color: white;
+  width: 55px; 
+  height: 55px;
+  border-radius: 50%; 
+  text-decoration: none;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 30px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  z-index: 999;
+}
+
+.whatsapp:hover { 
+  transform: scale(1.1); 
+}
+
+/* ==========================================
+   ANIMATION CLASSES (UNTUK JAVASCRIPT)
+   ========================================== */
+.hidden-left {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.show,
+.card.show {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (HP)
+   ========================================== */
+@media (max-width: 768px) {
+  .banner {
+    max-height: 250px;
+  }
+}
+
+.terms-section {
+  padding: 50px 20px;
+  background-color: #f8fafc;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #334155;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terms-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background: #e2e8f0;
+  color: #64748b;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+/* Halaman / Pages */
+.terms-page {
+  display: none; /* Sembunyikan semua halaman secara default */
+}
+
+.terms-page.active {
+  display: block; /* Tampilkan hanya halaman aktif */
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.terms-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.terms-card h2 {
+  font-size: 1.2rem;
+  color: #0284c7;
+  margin-top: 0;
+}
+
+/* Navigation Buttons */
+.terms-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.nav-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn.primary {
+  background: #0284c7;
+  color: #ffffff;
+  border: none;
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+
+
+.btn-back {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0284c7;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-back:hover {
+  background-color: #0369a1;
+}
+
+/* Section & Grid Paket Wi-Fi */
+.packages-section {
+  padding: 50px 20px;
+  background-color: #f8fafc;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.package-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.package-card.popular {
+  border: 2px solid #0284c7;
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+
+.package-header .speed {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0284c7;
+  margin: 10px 0;
+}
+
+.package-price {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.package-price .price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.package-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  text-align: left;
+}
+
+.package-features li {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.btn-select {
+  display: block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: bold;
+}
+
+.btn-select.primary,
+.btn-select:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+/* Header Utama Mobile */
+.navbar {
+  background-color: #0284c7;
+  padding: 10px 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Biar Logo Mentok Kiri & Burger Mentok Kanan */
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* Mendorong logo ke paling kiri & burger ke paling kanan */
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo di Kiri */
+.logo img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+/* Tombol Burger / X di Kanan */
+.burger-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  width: 28px !important;
+  height: 20px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  z-index: 1001 !important;
+}
+
+.burger-menu span {
+  width: 100% !important;
+  height: 3px !important;
+  background-color: #ffffff !important;
+  border-radius: 3px !important;
+  display: block !important;
+}
+
+
+
+/* Menu Dropdown Putih (Muncul saat diklik) */
+.nav-menu {
+  display: none; /* Sembunyi sebelum diklik */
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-top: 1px solid #eee;
+}
+
+/* Saat Burger Diklik (Aktif) */
+.nav-menu.active {
+  display: flex;
+}
+
+/* Item Menu Rata Tengah & Bergaris Tipis */
+.nav-menu a, 
+.dropdown-btn {
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  color: #333333;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  background: #ffffff;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* Submenu Produk */
+.dropdown-content {
+  display: none;
+  background-color: #f8fafc;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #0284c7;
+  font-weight: 600;
+  padding: 12px 0;
+}
+
