@@ -229,51 +229,26 @@ body {
     <div class="card">
       <h3>Paket HEMAT</h3>
       <div class="price">150rb<span>/bulan</span></div>
-      <div class="detail">Kecepatan: 20 Mbps <br> Unlimited</div>
-      <button class="btn-daftar" onclick="showPayment('Paket HEMAT 150rb')">Daftar Sekarang</button>
+      <div class="detail">Kecepatan: 20 Mbps <br> Kuota Unlimited <br> Gratis Router <br> Gratis Pemasangan <br> Gratis Instalasi <br> Cocok Untuk 4-6 Perangkat</div>
+      <button class="btn-daftar" onclick="showPayment('Paket HEMAT 150rb')">Berlangganan Sekarang</button>
     </div>
 
     <div class="card">
       <h3>Paket CEPAT</h3>
       <div class="price">185rb<span>/bulan</span></div>
-      <div class="detail">Kecepatan: 35 Mbps <br> Unlimited + Free Router</div>
-      <button class="btn-daftar" onclick="showPayment('Paket CEPAT 185rb')">Daftar Sekarang</button>
+      <div class="detail">Kecepatan: 35 Mbps <br> Kuota Unlimited <br> Gratis Router <br> Gratis Pemasangan <br> Gratis Instalasi <br> Cocok Untuk 6-8 Perangkat </div>
+      <button class="btn-daftar" onclick="showPayment('Paket CEPAT 185rb')">Berlangganan Sekarang</button>
     </div>
 
     <div class="card">
       <h3>Paket PRO</h3>
       <div class="price">200rb<span>/bulan</span></div>
-      <div class="detail">Kecepatan: 50 Mbps <br> Kuota Unlimited + Free Cctv & Router</div>
-      <button class="btn-daftar" onclick="showPayment('Paket PRO 200rb')">Daftar Sekarang</button>
-    </div>
-
-    <div class="payment">
-      <h4>Metode Pembayaran</h4>
-      <div class="payment-list">
-        <div class="payment-item">🏦 BCA</div>
-        <div class="payment-item">🏦 BRI</div>
-        <div class="payment-item">🏦 Mandiri</div>
-        <div class="payment-item">💳 E-Wallet</div>
-        <div class="payment-item">🏪 Alfamart</div>
-        <div class="payment-item">🏠 Bayar di Rumah</div>
-      </div>
-    </div>
-
+      <div class="detail">Kecepatan: 50 Mbps <br> Kuota Unlimited <br> Gratis Router <br> Gratis Pemasangan <br> Gratis Instalasi <br> Gratis 1 Cctv <br> Cocok Untuk 8-10 Perangkat </div>
+      <button class="btn-daftar" onclick="showPayment('Paket PRO 200rb')">Berlangganan Sekarang</button>
   </div>
 
   <!-- POPUP PILIH PEMBAYARAN -->
-  <div id="paymentPopup" class="popup">
-    <div class="popup-content">
-      <span class="close-popup" onclick="closePayment()">×</span>
-      <h3 id="popupTitle">Pilih Metode Pembayaran</h3>
-      <div class="payment-option" onclick="daftarWA('Transfer BCA')">🏦 Transfer BCA - 1234567890</div>
-      <div class="payment-option" onclick="daftarWA('Transfer BRI')">🏦 Transfer BRI - 0987654321</div>
-      <div class="payment-option" onclick="daftarWA('Transfer Mandiri')">🏦 Transfer Mandiri - 1122334455</div>
-      <div class="payment-option" onclick="daftarWA('E-Wallet DANA/OVO')">💳 E-Wallet DANA/OVO</div>
-      <div class="payment-option" onclick="daftarWA('Bayar di Alfamart')">🏪 Bayar di Alfamart</div>
-      <div class="payment-option" onclick="daftarWA('Bayar di Rumah')">🏠 Bayar di Rumah - Teknisi</div>
-    </div>
-  </div>
+  
 
   <!-- TOMBOL WA ICON BARU -->
 <a href="https://wa.me/628175284838" class="whatsapp" target="_blank">
@@ -294,8 +269,8 @@ body {
   }
   
   function daftarWA(metode) {
-    let pesan = `Halo SONICHOME, saya mau daftar ${selectedPaket}\nMetode Pembayaran: ${metode}`;
-    window.open(`https://wa.me/62xxxxxxxxxx?text=${encodeURIComponent(pesan)}`);
+    let pesan = `, saya mau daftar ${selectedPaket}\nMetode Pembayaran: ${metode}`;
+    window.open(`https://wa.me/628175284838?text=${encodeURIComponent(pesan)}`);
     closePayment();
   }
   
