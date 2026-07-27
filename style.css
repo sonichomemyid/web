@@ -836,9 +836,9 @@ body {
   border-bottom: 1px dashed #e2e8f0;
 }
 .wifi-fitur li:before {
-  content: "✓ ";
-  color: #0f766e;
-  font-weight: bold;
+   margin: 12px 0 20px; 
+   color: #333;
+   line-height: 1.6; 
 }
 .wifi-harga {
   font-size: 24px;
