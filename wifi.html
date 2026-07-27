@@ -14,16 +14,122 @@
   body { background: #f3f4f6; }
 
   /* HEADER */
-  .header { background: white; padding: 12px 15px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-  .header img.logo { height: 45px; }
-  .burger { font-size: 30px; color: #6b21a8; cursor: pointer; }
+  .navbar {
+  position: relative;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  background: #0d47a1; /* Ubah ke #0a4cff jika mau warna lebih cerah */
+  color: white; 
+  padding: 12px 20px;
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+}
 
-  /* SIDEBAR */
-  .sidebar { height: 100%; width: 0; position: fixed; top: 0; left: 0; background: white; overflow-x: hidden; transition: 0.3s; z-index: 2000; box-shadow: 2px 0 10px rgba(0,0,0,0.2); }
-  .sidebar .closebtn { font-size: 35px; position: absolute; top: 5px; right: 20px; cursor: pointer; }
-  .sidebar a { padding: 15px 20px; text-decoration: none; font-size: 16px; color: #333; display: block; border-bottom: 1px solid #eee; text-align: center; }
-  .sidebar a.active { color: #6b21a8; font-weight: bold; }
-  .submenu a { padding-left: 40px; color: #6b21a8; font-size: 15px; }
+.logo img {
+  height: 70px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
+}
+
+.burger {
+  cursor: pointer;
+  z-index: 1001;
+  width: 28px;
+  height: 20px;
+  position: relative;
+}
+
+.burger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: white;
+  transition: 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+/* Posisi 3 Garis Burger */
+.burger span:nth-child(1) { top: 0; }
+.burger span:nth-child(2) { top: 8.5px; }
+.burger span:nth-child(3) { bottom: 0; }
+
+/* Animasi Transformasi ke 'X' */
+.burger.active span:nth-child(1) {
+  top: 8.5px;
+  transform: rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  bottom: auto;
+  top: 8.5px;
+  transform: rotate(-45deg);
+}
+
+/* Dropdown Menu Utama Mobile */
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%; /* Pakai 100% biar gak melebihi layar di HP */
+  background: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.menu.active {
+  max-height: 1000px !important;
+}
+
+.menu a {
+  display: block;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Sub-Dropdown Menu */
+.dropdown-content {
+  display: none !important;
+  background: white;
+}
+
+.dropdown-content a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center; /* Fixed typo: 'cente' -> 'center' */
+  gap: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  text-decoration: none;
+}
+
+.dropdown-content i {
+  color: #007bff;
+  width: 18px;
+  text-align: center;
+}
+
+.menu-item.active .dropdown-content {
+  display: block !important;
+}
+
+.menu-item.active .arrow {
+  transform: rotate(180deg);
+}
 
   /* KONTEN PAKET */
   .container { padding: 20px; }
@@ -83,18 +189,52 @@
 
   <!-- SIDEBAR MENU -->
   <div id="mySidebar" class="sidebar">
-    <a class="closebtn" onclick="closeNav()">×</a>
-    <a href="index.html">Dashboard</a>
-    <a><b>Produk ^</b></a>
-    <div class="submenu">
-      <a href="wifi.html" class="active">📶 WiFi</a>
-      <a href="cctv.html">⚡ Cctv</a>
-      <a href="promo.html">🏷️ Promo</a>
-    </div>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-    <a href="syarat.html">Syarat & Ketentuan</a>
+    <!-- Tombol Burger -->
+  <div class="burger" id="burgerBtn">
+    <span></span><span></span><span></span>
   </div>
+
+  <!-- Menu Navigasi -->
+  <div class="menu" id="menuNav">
+    <a href="index.html">Dashboard</a>
+
+    <!-- Sub-menu Produk -->
+    <div class="menu-item" id="produkItem">
+      <a href="javascript:void(0)" id="produkBtn" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+        Produk <i class="fa-solid fa-chevron-down arrow"></i>
+      </a>
+      <div class="dropdown-content">
+        <a href="wifi.html"><i class="fa-solid fa-wifi"></i>WiFi</a>
+        <a href="cctv.html"><i class="fa-solid fa-bolt"></i>Cctv</a>
+        <a href="promo.html"><i class="fa-solid fa-tag"></i> Promo</a>
+      </div>
+    </div>
+
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="terms.html">Syarat & Ketentuan</a>
+  </div>
+</header>
+
+<!-- SCRIPT LANGSUNG DITARUH DISINI BIAR PASTI JALAN -->
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const menu = document.getElementById('menuNav');
+  
+  burger.onclick = function() {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+  };
+
+  // Script Dropdown Produk
+  const produkBtn = document.getElementById('produkBtn');
+  const produkItem = document.getElementById('produkItem');
+  
+  produkBtn.onclick = function(e) {
+    e.preventDefault();
+    produkItem.classList.toggle('active');
+  };
+</script>
 
   <!-- ISI -->
   <div class="container">
