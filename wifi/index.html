@@ -210,7 +210,7 @@ body {
     </div>
 
     <a href="/contact">Contact</a>
-    <a href="#about">Tentang</a>
+    <a href="#tentang" onclick="toggleMenu()">Tentang</a>
     <a href="/terms">Syarat & Ketentuan</a>
   </div>
 </header>
@@ -289,39 +289,33 @@ body {
     </div>
   </div>
 
-  <!-- POPUP PILIH PEMBAYARAN -->
+ <section id="tentang" class="tentang">
+   <br></br>
+	  <br></br>
+	<h2>Tentang Kami</h2>
+    <p>Sonic Home adalah penyedia layanan internet rumahan untuk keseharian seperti pekerjaan, tugas, game, sosmed, dll.</p>
+    
+    <h3>Kenapa Pilih Sonic Home?</h3>
+    <ul>
+      <li><b>Kecepatan Tinggi:</b> Streaming, game, zoom lancar anti lag</li>
+      <li><b>Kuota Unlimited:</b> Nikmati internetan tanpa khawatir kuota bakalan habis</li>
+      <li><b>Harga Terjangkau:</b> Paket mulai dari 150rb/bulan</li>
+      <li><b>Instalasi Cepat:</b> Tim kami siap pasang kapanpun</li>
+      <li><b>Support 24/7:</b> Ada kendala? Tim CS kami selalu siap 1×24 Jam </li>
+    </ul>
+
+    <br><br>
+    </p>
+  </section>
+
   
 
   <!-- TOMBOL WA ICON BARU -->
 <a href="https://wa.me/628175284838" class="whatsapp" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
+
 <script>
-  let selectedPaket = "";
-  function openNav() { document.getElementById("mySidebar").style.width = "280px"; }
-  function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
-  
-  function showPayment(paket) {
-    selectedPaket = paket;
-    document.getElementById("popupTitle").innerText = `Daftar ${paket}\nPilih Metode Bayar`;
-    document.getElementById("paymentPopup").style.display = "flex";
-  }
-  function closePayment() {
-    document.getElementById("paymentPopup").style.display = "none";
-  }
-  
-  function daftarWA(metode) {
-    let pesan = `, saya mau daftar ${selectedPaket}\nMetode Pembayaran: ${metode}`;
-    window.open(`https://wa.me/628175284838?text=${encodeURIComponent(pesan)}`);
-    closePayment();
-  }
-  
-  // tutup popup pas klik luar
-  window.onclick = function(event) {
-    if (event.target == document.getElementById("paymentPopup")) {
-      closePayment();
-    }
-  }
 </script>
 
 </body>
