@@ -1,1 +1,130 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Sonichome</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR - SAMA KAYAK YG LAIN -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="logo.png" alt="Logo Sonic">
+      </a>  
+    </div>
+    
+    <div class="burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="menu" id="menuNav">
+      <a href="/">Dashboard</a>
+      <div class="menu-item" id="produkItem">
+        <a href="javascript:void(0)" id="produkBtn">
+          Produk <i class="fa-solid fa-chevron-down arrow"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="/wifi"><i class="fa-solid fa-wifi"></i>WiFi</a>
+          <a href="/cctv"><i class="fa-solid fa-bolt"></i>Cctv</a>
+          <a href="/promo"><i class="fa-solid fa-tag"></i> Promo</a>
+        </div>
+      </div>
+      <a href="/contact">Contact</a>
+      <a href="/s&k">Syarat & Ketentuan</a>
+    </div>
+  </header>
+
+  <!-- SECTION CONTACT -->
+  <section class="contact-hero">
+    <h1>Hubungi Kami</h1>
+    <p>Ada pertanyaan? Tim Sonic Home siap bantu 24/7</p>
+  </section>
+
+  <section class="contact-container">
+    
+    <!-- INFO KONTAK -->
+    <div class="contact-info">
+      <h2>Info Kontak</h2>
+      
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h3>Telepon / WhatsApp</h3>
+          <a href="https://wa.me/628175284838" target="_blank">+62 817-5284-838</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <h3>Email</h3>
+          <a href="mailto:sonichome2026@gmail.com">sonichome2026@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <h3>Alamat</h3>
+          <p>Klungkung, Bali</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-clock"></i>
+        <div>
+          <h3>Jam Operasional</h3>
+          <p>Senin - Minggu: 24 Jam</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FORM KONTAK -->
+    <div class="contact-form">
+      <h2>Kirim Pesan</h2>
+      <form action="https://wa.me/628175284838" method="get" target="_blank">
+        <input type="text" name="nama" placeholder="Nama Anda" required>
+        <input type="text" name="nohp" placeholder="No WhatsApp" required>
+        <input type="text" name="subjek" placeholder="Subjek" required>
+        <textarea name="pesan" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+        <button type="submit" class="btn-kirim">Kirim via WhatsApp</button>
+      </form>
+      <p style="font-size:0.8rem; margin-top:10px;">*Form ini langsung redirect ke WA Admin</p>
+    </div>
+
+  </section>
+
+  <!-- MAPS -->
+  <section class="maps">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.2!2d115.4!3d-8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJTIDExNcKwMjQnMDAuMCJF!5e0!3m2!1sid!2sid!4v123456" 
+    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Sonic Home. All rights reserved.<br>
+       Klungkung, Bali | Email: sonichome2026@gmail.com</p>
+  </footer>
+
+  <!-- SCRIPT SAMA -->
+  <script>
+    const burger = document.getElementById('burgerBtn');
+    const menu = document.getElementById('menuNav');
+    burger.onclick = function() {
+      burger.classList.toggle('active');
+      menu.classList.toggle('active');
+    };
+    const produkBtn = document.getElementById('produkBtn');
+    const produkItem = document.getElementById('produkItem');
+    produkBtn.onclick = function(e) {
+      e.preventDefault();
+      produkItem.classList.toggle('active');
+    };
+  </script>
+</body>
+</html>
