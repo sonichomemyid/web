@@ -941,10 +941,10 @@ margin: 30px;
   font-size: 14px;
   margin-right: 8px;
 }
-.harga .baru {
+.harga .baru h1 {
   font-size: 24px;
   font-weight: bold;
-  color: #00A3FF;
+  color: #00A3FF !important;
 }
 
 .btn-promo {
