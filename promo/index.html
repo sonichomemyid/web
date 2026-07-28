@@ -47,36 +47,7 @@
   </div>
 </header>
 
-<!-- SCRIPT LANGSUNG DITARUH DISINI BIAR PASTI JALAN -->
-<script>
-  const burger = document.getElementById('burgerBtn');
-  const menu = document.getElementById('menuNav');
-  
-  burger.onclick = function() {
-    burger.classList.toggle('active');
-    menu.classList.toggle('active');
-  };
 
-  // Script Dropdown Produk
-  const produkBtn = document.getElementById('produkBtn');
-  const produkItem = document.getElementById('produkItem');
-  
-  produkBtn.onclick = function(e) {
-    e.preventDefault();
-    produkItem.classList.toggle('active');
-  };
-		function bukaPilihan(id) {
-			document.getElemenById("popup-"+ id).style.display = "block";
-		}
-		function tutupPilihan (id) {
-			document.getElementById("popup-" + id).style.display = "noone";
-		}
-		window.oneclick = function(event) {
-			if (event.target.classList.container('popup')) {
-				event.target.style.display = "none";
-			}
-		}
-</script>
 
   <!-- Hero Promo -->
   <section class="promo-hero">
@@ -171,6 +142,35 @@
     <a href="/s&k" style="color: #ffffff; text-decoration: underline; font-size: 0.9rem;">Syarat & Ketentuan</a>
   </div>
 </footer>
-	
+	<!-- SCRIPT LANGSUNG DITARUH DISINI BIAR PASTI JALAN -->
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const menu = document.getElementById('menuNav');
+  
+  burger.onclick = function() {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+  };
+
+  // Script Dropdown Produk
+  const produkBtn = document.getElementById('produkBtn');
+  const produkItem = document.getElementById('produkItem');
+  
+  produkBtn.onclick = function(e) {
+    e.preventDefault();
+    produkItem.classList.toggle('active');
+  };
+		function bukaPilihan(id) {
+			document.getElemenById("popup-"+ id).style.display = "block";
+		}
+		function tutupPilihan (id) {
+			document.getElementById("popup-" + id).style.display = "noone";
+		}
+		window.oneclick = function(event) {
+			if (event.target.classList.container('popup')) {
+				event.target.style.display = "none";
+			}
+		}
+</script>
 </body>
 </html>
