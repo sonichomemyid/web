@@ -6,21 +6,66 @@
   <title>Promo Spesial - Sonichome</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="promo.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="logo-sonichome.png" alt="Logo Sonichome">
+  <!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+   <a href="/"</a>
+    <img src="logo.png" alt="Logo Sonic">
+   </a>  
+</div>
+  
+  <!-- Tombol Burger -->
+  <div class="burger" id="burgerBtn">
+    <span></span><span></span><span></span>
+  </div>
+
+  <!-- Menu Navigasi -->
+  <div class="menu" id="menuNav">
+    <a href="/">Dashboard</a>
+
+    <!-- Sub-menu Produk -->
+    <div class="menu-item" id="produkItem">
+      <a href="javascript:void(0)" id="produkBtn" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+        Produk <i class="fa-solid fa-chevron-down arrow"></i>
+      </a>
+      <div class="dropdown-content">
+        <a href="/wifi"><i class="fa-solid fa-wifi"></i>WiFi</a>
+        <a href="/cctv"><i class="fa-solid fa-bolt"></i>Cctv</a>
+        <a href="/promo"><i class="fa-solid fa-tag"></i> Promo</a>
+      </div>
     </div>
-    <nav>
-      <a href="index.html">Beranda</a>
-      <a href="wifi.html">WiFi</a>
-      <a href="cctv.html">CCTV</a>
-      <a href="promo.html" class="active">Promo</a>
-    </nav>
-  </header>
+
+    <a href="#contact">Contact</a>
+    <a href="#tentang" onclick="toggleMenu()">Tentang</a>
+    <a href="/s&k">Syarat & Ketentuan</a>
+  </div>
+</header>
+
+<!-- SCRIPT LANGSUNG DITARUH DISINI BIAR PASTI JALAN -->
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const menu = document.getElementById('menuNav');
+  
+  burger.onclick = function() {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+  };
+
+  // Script Dropdown Produk
+  const produkBtn = document.getElementById('produkBtn');
+  const produkItem = document.getElementById('produkItem');
+  
+  produkBtn.onclick = function(e) {
+    e.preventDefault();
+    produkItem.classList.toggle('active');
+  };
+</script>
 
   <!-- Hero Promo -->
   <section class="promo-hero">
