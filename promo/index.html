@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 	
 <body>
@@ -161,12 +161,12 @@
     produkItem.classList.toggle('active');
   };
 		function bukaPilihan(id) {
-			document.getElemenById("popup-"+ id).style.display = "block";
+			document.getElementById("popup-"+ id).style.display = "block";
 		}
 		function tutupPilihan (id) {
-			document.getElementById("popup-" + id).style.display = "noone";
+			document.getElementById("popup-" + id).style.display = "none";
 		}
-		window.oneclick = function(event) {
+		window.onclick = function(event) {
 			if (event.target.classList.container('popup')) {
 				event.target.style.display = "none";
 			}
