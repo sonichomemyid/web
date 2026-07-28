@@ -963,52 +963,61 @@ margin: 30px;
   background: #0d5f59;
 }
 /* ===== POPUP PILIHAN PAKET ===== */
+/* POPUP NUKLIR */
 .popup {
-  display: none !important; 
-  position: fixed !important;
-  z-index: 9999 !important;
+  display: none;
+  position: fixed; /* bikin full layar */
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.6); /* background item transparan */
+  overflow: auto;
 }
 
 .popup-content {
-  background: white;
-  margin: 25% auto;
+  background-color: #ffffff;
+  margin: 20% auto; /* turunin ke tengah */
   padding: 20px;
+  border-radius: 12px;
   width: 90%;
   max-width: 350px;
-  border-radius: 12px;
   text-align: center;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.popup-content h3 {
+  margin-bottom: 15px;
 }
 
 .popup-content a {
-  display: block !important;
-  background: #f1f5f9 !important;
-  color: #0f172a !important;
-  padding: 15px;
+  display: block;
+  background: #007bff;
+  color: white;
+  padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
-  text-decoration: none !important;
-  border: 2px solid #e2e8f0;
-  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
 }
+
 .popup-content a:hover {
-  border-color: #0f766e !important;
-  background: #ecfdf5 !important;
+  background: #0056b3;
 }
 
-.popup-content a b {
-  font-size: 18px;
-  color: #0f766e;
-}
-
-.popup .close {
+.close {
+  color: #aaa;
   float: right;
   font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
-  color: #64748b;
+  position: absolute;
+  right: 15px;
+  top: 5px;
 }
+
+.close:hover {
+  color: black;
+   }
