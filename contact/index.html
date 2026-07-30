@@ -22,19 +22,22 @@
     </div>
 
     <div class="menu" id="menuNav">
-      <a href="/">Dashboard</a>
-      <div class="menu-item" id="produkItem">
-        <a href="javascript:void(0)" id="produkBtn">
-          Produk <i class="fa-solid fa-chevron-down arrow"></i>
-        </a>
-        <div class="dropdown-content">
-          <a href="/wifi"><i class="fa-solid fa-wifi"></i>WiFi</a>
-          <a href="/cctv"><i class="fa-solid fa-bolt"></i>Cctv</a>
-          <a href="/promo"><i class="fa-solid fa-tag"></i> Promo</a>
-        </div>
+        <a href="/"><i class="fa-solid fa-home"></i> Dashboard</a>
+
+    <!-- Sub-menu Produk -->
+    <div class="menu-item" id="produkItem">
+      <a href="javascript:void(0)" id="produkBtn" style="display:flex; align-items:center; justify-content:center; gap:8px;"><i class="fa-solid fa-shop"></i> Produk <i class="fa-solid fa-chevron-down arrow"></i>
+	  </a>
+      <div class="dropdown-content">
+        <a href="/wifi"><i class="fa-solid fa-wifi"></i> WiFi</a>
+        <a href="/cctv"><i class="fa-solid fa-camera"></i> Cctv</a>
+        <a href="/promo"><i class="fa-solid fa-tag"></i> Promo</a>
       </div>
-      <a href="/contact">Contact</a>
-      <a href="/s&k">Syarat & Ketentuan</a>
+    </div>
+
+    <a href="/contact"><i class="fa-solid fa-phone"></i> Contact</a>
+    <a href="#tentang" onclick="toggleMenu()"><i class="fa-solid fa-book"></i> Tentang</a>
+    <a href="/s&k"><i class="fa-solid fa-lock"></i> Syarat & Ketentuan</a>
     </div>
   </header>
 
